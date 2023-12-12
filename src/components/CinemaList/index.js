@@ -18,7 +18,7 @@ const CinemaList = () => {
 
   return (
     <View style={styles.container}>
-        {cinemas.map(c => <Cinema key={c.name} {...c} />)}
+      {cinemas.map(c => <Cinema key={c.name} {...c} />)}
     </View>
   );
 };

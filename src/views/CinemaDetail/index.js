@@ -1,5 +1,6 @@
 import styles from './styles';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import MovieList from '../../components/MovieList';
 
 const CinemaDetail = ({ route }) => {
   const { name, description, address, phone, website } = route.params;
@@ -15,6 +16,7 @@ const CinemaDetail = ({ route }) => {
       </View>
       <View style={styles.movieContainer}>
         <Text style={styles.movieTitle}>Movies</Text>
+        <MovieList cinemaName={name} />
       </View>
     </ScrollView>
   );

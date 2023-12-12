@@ -15,7 +15,7 @@ export async function authenticateUser() {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
-    const token = await response.json();
+    const token = await response.json().token;
 
     return token;
   } catch (error) {
