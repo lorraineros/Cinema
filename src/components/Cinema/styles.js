@@ -5,20 +5,25 @@ const { width: winWidth, height: winHeight } = Dimensions.get('window');
 
 export default StyleSheet.create({
   container: {
-    width: winWidth - 50,
-    paddingLeft: 10,
+    width: winWidth - 100,
+    padding: 10,
+    margin: 2,
     borderRadius: 5,
-    borderColor: darkerBlue,
+    borderColor: paleCornflowerBlue,
     borderWidth: 2,
-    flexDirection: 'row',
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'start'
   },
   title: {
     paddingLeft: 20,
-    fontSize: 34,
+    fontSize: 20,
     fontWeight: 'bold',
     color: stTropaz
+  },
+  paragraph: {
+    paddingLeft: 20,
+    fontSize: 15,
+    color: darkerBlue
   }
 });

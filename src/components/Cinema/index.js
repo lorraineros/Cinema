@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './styles';
 import { Button, Image, Text, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getCinemas } from '../../redux/features/cinema/cinema-slice';
 
 const Cinema = ({
-  id,
   name,
   description,
   address,
@@ -15,18 +14,12 @@ const Cinema = ({
   website
  }) => {
   const { navigate } = useNavigation();
-  const dispatch = useDispatch();
-  const cinemas = useSelector((state) => {
-    console.log(state);
-    return state.cinema.value;
-  });
 
   return (
-    <TouchableOpacity onPress={() => navigate('CinemaList', { name })}>
+    <TouchableOpacity onPress={() => navigate('CinemaDetail', { name, description, address, phone, website })}>
       <View style={ styles.container }>
-        <Text style={styles.title}>Cinema</Text>
-        <Text> {id} </Text>
-        <Button title="Add" onPress={() => dispatch(getCinemas())} />
+        <Text style={styles.title}>{ name }</Text>
+        <Text style={styles.paragraph}>{ website }</Text>
       </View>
     </TouchableOpacity>
   );

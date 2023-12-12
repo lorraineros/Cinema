@@ -1,11 +1,35 @@
 import { StyleSheet } from 'react-native';
-import { stTropaz } from '../../styles/colors';
+import { darkerBlue, stTropaz } from '../../styles/colors';
 
 export default StyleSheet.create({
-  container: {
+  cinemaContainer: {
     flex: 1,
-    backgroundColor: '#fff',
+    padding: 25,
+    backgroundColor: 'white',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'start'
   },
+  movieContainer: {
+    flex: 1,
+    padding: 25,
+    backgroundColor: 'black',
+    alignItems: 'center',
+    justifyContent: 'start'
+  },
+  cinemaTitle: {
+    padding: 30,
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: stTropaz
+  },
+  movieTitle: {
+    padding: 30,
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: 'white'
+  },
+  cinemaParagraph: {
+    fontSize: 17,
+    color: darkerBlue
+  }
 });

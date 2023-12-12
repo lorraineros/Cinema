@@ -1,12 +1,20 @@
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
 import styles from './styles';
+import React, { useEffect } from 'react';
 import { Text, View, TextInput } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCinemas } from '../../redux/features/cinema/cinema-slice';
 import Cinema from '../Cinema';
 
-const CinemaList = ({
-  cinemas
-}) => {
+const CinemaList = () => {
+  const dispatch = useDispatch();
+  const cinemas = useSelector((state) => {
+    return state.cinema.cinemas;
+  });
+
+  useEffect(() => {
+    dispatch(getCinemas());
+  }, [])
 
   return (
     <View style={styles.container}>

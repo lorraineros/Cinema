@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { token } from "../../../token";
+import { authenticateUser } from "../../../services/authentication-service";
 
-const baseUrl = 'http://api.kvikmyndir.is';
+const baseUrl = 'https://api.kvikmyndir.is';
 
 const cinemaSlice = createSlice({
   name: 'cinema',
@@ -35,6 +35,7 @@ export function getCinemas() {
   return async (dispatch) => {
     try {
       dispatch(getCinemasLoading());
+      const token = await authenticateUser();
       const response = await fetch(`${baseUrl}/theaters`, {
         headers: {
           'x-access-token': token
