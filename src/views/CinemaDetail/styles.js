@@ -3,14 +3,13 @@ import { darkerBlue, stTropaz } from '../../styles/colors';
 
 export default StyleSheet.create({
   cinemaContainer: {
-    flex: 1,
     padding: 25,
     backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'start'
   },
   movieContainer: {
-    flex: 1,
+    marginTop: 20,
     padding: 25,
     backgroundColor: 'black',
     alignItems: 'center',

@@ -9,7 +9,7 @@ import Cinema from '../Cinema';
 const CinemaList = () => {
   const dispatch = useDispatch();
   const cinemas = useSelector((state) => {
-    return state.cinema.cinemas;
+    return state.cinema.cinemas.slice().sort((a, b) => a.name.localeCompare(b.name));
   });
 
   useEffect(() => {
