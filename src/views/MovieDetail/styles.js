@@ -45,5 +45,31 @@ export default StyleSheet.create({
     color: darkerBlue,
     marginRight: 10,
     marginBottom: 10
-  }
+  },
+  showtimeItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 10
+  },
+  showtime: {
+    fontSize: 16,
+    color: darkerBlue
+  },
+  purchaseButton: {
+    backgroundColor: 'black',
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    borderRadius: 5
+  },
+  purchaseButtonText: {
+    color: 'white',
+    fontSize: 14
+  },
+  scheduleItem: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 5
+  },
 });

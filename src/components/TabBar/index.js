@@ -22,9 +22,4 @@ const TabBar = ({ pageName, redirect }) => {
   )
 }
 
-TabBar.propTypes = {
-  pageName: PropTypes.string.isRequired,
-  redirect: PropTypes.func.isRequired
-}
-
 export default TabBar

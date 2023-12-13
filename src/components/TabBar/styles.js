@@ -1,5 +1,5 @@
 import { StyleSheet, Dimensions } from 'react-native'
-import { darkerBlue, stTropaz } from '../../styles/colors'
+import { stTropaz, black } from '../../styles/colors'
 
 const { width: winWidth } = Dimensions.get('window')
 
@@ -10,7 +10,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     width: winWidth,
     height: 40,
-    backgroundColor: darkerBlue
+    backgroundColor: black
   },
   taskTabBar: {
     marginBottom: 10,

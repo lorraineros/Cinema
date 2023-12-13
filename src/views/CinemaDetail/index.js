@@ -9,6 +9,8 @@ const CinemaDetail = ({ route }) => {
     return state.movie.movies;
   });
 
+  console.log( name, description, address, phone, website )
+  console.log ( movies )
   return (
     <ScrollView>
       <View style={styles.cinemaContainer}>

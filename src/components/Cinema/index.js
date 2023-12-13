@@ -25,12 +25,4 @@ const Cinema = ({
   );
 };
 
-Cinema.propTypes = {
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string,
-  address: PropTypes.string,
-  phone: PropTypes.string,
-  website: PropTypes.string.isRequired
-}
-
 export default Cinema;

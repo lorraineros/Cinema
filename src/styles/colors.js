@@ -9,3 +9,4 @@ export const mimosa = '#F5F5CC';
 export const paleCornflowerBlue = '#ABCDEF';
 export const classicRose = '#F4C8DB';
 export const stTropaz = '#38557B';
+export const black = '#000000';

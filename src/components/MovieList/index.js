@@ -25,17 +25,4 @@ const MovieList = ({ movies , cinemaName }) => {
   );
 };
 
-MovieList.propTypes = {
-  movies: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      poster: PropTypes.string.isRequired,
-      plot: PropTypes.string,
-      durationMinutes: PropTypes.string,
-      year: PropTypes.string.isRequired,
-      genres: PropTypes.array
-    })
-  ).isRequired,
-};
-
 export default MovieList;

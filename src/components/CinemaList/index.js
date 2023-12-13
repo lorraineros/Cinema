@@ -13,15 +13,5 @@ const CinemaList = ({ cinemas }) => {
   );
 };
 
-CinemaList.propTypes = {
-  cinemas: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    description: PropTypes.string,
-    address: PropTypes.string,
-    phone: PropTypes.string,
-    website: PropTypes.string.isRequired
-  })).isRequired,
-}
-
 export default CinemaList;
 
