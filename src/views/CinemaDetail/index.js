@@ -3,7 +3,9 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSelector } from 'react-redux';
 import MovieList from '../../components/MovieList';
 
-const CinemaDetail = ({ route }) => {
+const CinemaDetail = ({ 
+  route
+}) => {
   const { cinema } = route.params;
   const movies = useSelector((state) => {
     return state.movie.movies;

@@ -4,7 +4,9 @@ import { View, TouchableHighlight, Text } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import styles from './styles'
 
-const TabBar = ({ pageName }) => {
+const TabBar = ({ 
+  pageName
+}) => {
   const { navigate } = useNavigation();
 
   return (

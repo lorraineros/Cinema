@@ -9,7 +9,7 @@ import { getUpcomings } from '../../redux/features/upcoming/upcoming-slice';
 const Upcoming = ({
   upcomingList,
   title
- }) => {
+}) => {
   const upcoming = upcomingList.find(c => c['title'] === title )
   const { navigate } = useNavigation();
 

@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 const Cinema = ({
   cinemas,
   name
- }) => {
+}) => {
   const { navigate } = useNavigation();
   const cinema = cinemas.find(c => c['name'] === name )
 

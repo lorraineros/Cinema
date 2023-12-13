@@ -8,13 +8,14 @@ import { getCinemas } from '../../redux/features/cinema/cinema-slice';
 
 const Movie = ({
   movies,
+  cinemaName,
   title
- }) => {
+}) => {
   const { navigate } = useNavigation();
   const movie = movies.find(m => m['title'] === title )
 
   return (
-    <TouchableOpacity onPress={() => navigate('MovieDetail', { movie })}>
+    <TouchableOpacity onPress={() => navigate('MovieDetail', { movie, cinemaName })}>
       <View style={ styles.container }>
         <Image
           style={styles.image}

@@ -2,8 +2,13 @@ import React from 'react';
 import { ScrollView, Text, View, Image, TouchableOpacity, Linking } from 'react-native';
 import styles from './styles';
 
-const MovieDetail = ({ route }) => {
-  const { movie } = route.params;
+const MovieDetail = ({ 
+  route
+}) => {
+  const { movie, cinemaName } = route.params;
+  const showtimes = movie['showtimes'].filter((showtime) =>
+    showtime.cinema.name === cinemaName
+  );
 
   const renderSchedule = (showtime) => (
     showtime.schedule.map((scheduleItem, index) => (
@@ -41,7 +46,7 @@ const MovieDetail = ({ route }) => {
         <View style={styles.showtimesContainer}>
           <Text style={styles.showtime}>Showtimes</Text>
           <View style={styles.scheduleItem}>
-            { movie['showtimes'].map(renderSchedule) }
+            { showtimes.map(renderSchedule) }
           </View>
         </View>
       </View>

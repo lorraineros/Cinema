@@ -3,7 +3,9 @@ import { ScrollView, Text, View } from 'react-native';
 import { WebView } from 'react-native-webview';
 import styles from './styles';
 
-const UpcomingDetail = ({ route }) => {
+const UpcomingDetail = ({ 
+  route
+}) => {
   const { upcoming } = route.params;
 
   return (
