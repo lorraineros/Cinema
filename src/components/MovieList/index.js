@@ -6,23 +6,18 @@ import Movie from '../Movie';
 
 const MovieList = ({ movies , cinemaName }) => {
   const [filteredMovies, setFilteredMovies] = useState([]);
-  const [cinemaFilter, setCinemaFilter] = useState(''); // State to store the cinema name for filtering
 
   // Filter movies based on cinema name
   useEffect(() => {
-    const filtered = movies.filter((movie) => movie.showtimes.filter((cinema) => cinema.name === cinemaName));
+    const filtered = movies.filter((movie) =>
+      movie.showtimes.some((showtime) => showtime.cinema.name === cinemaName)
+    );
+
     setFilteredMovies(filtered);
-  }, [movies, cinemaFilter]);
+  }, [movies]);
 
   return (
     <View style={styles.container}>
-      {/* Input for filtering by cinema name */}
-      <TextInput
-        style={styles.input}
-        placeholder="Filter by cinema name"
-        value={cinemaFilter}
-        onChangeText={(text) => setCinemaFilter(text)}
-      />
       {filteredMovies.map((movie) => (
         <Movie key={movie.id} {...movie} />
       ))}
@@ -35,10 +30,10 @@ MovieList.propTypes = {
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       poster: PropTypes.string.isRequired,
-      plot: PropTypes.string.isRequired,
-      runtime: PropTypes.string.isRequired,
+      plot: PropTypes.string,
+      runtime: PropTypes.string,
       year: PropTypes.string.isRequired,
-      genres: PropTypes.array.isRequired
+      genres: PropTypes.array
     })
   ).isRequired,
 };

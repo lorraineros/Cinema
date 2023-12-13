@@ -6,6 +6,7 @@ import CinemaList from '../../components/CinemaList';
 
 const Cinemas = () => {
   const cinemas = useSelector((state) => {
+    // console.log(state.cinema.cinemas);
     return state.cinema.cinemas.slice().sort((a, b) => a.name.localeCompare(b.name));
   });
   

@@ -16,16 +16,16 @@ export default function AppWrapper () {
 
 const App = () => {
   const dispatch = useDispatch();
-  const token = useSelector((state) => {
-    return state.token.token;
-  });
+  // const token = useSelector((state) => {
+  //   return state.token.token;
+  // });
+
+  const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjY1NzcxMDU3YzQwNzkzMzZiYzAyNTI0ZCIsImlhdCI6MTcwMjQ3NTg0NCwiZXhwIjoxNzAyNTYyMjQ0fQ.fxVnG66h_PuhFXZw1CbbxGmVvkxf-51haHeTL20dvdg";
 
   useEffect(() => {
     const fetchData = () => {
       try {
-        if (!token) {
-          dispatch(getToken());
-        }
+        // dispatch(getToken());
         // At this point, the token is guaranteed to be available or updated
         dispatch(getCinemas(token));
         dispatch(getMovies(token));

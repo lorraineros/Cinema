@@ -37,10 +37,10 @@ const Movie = ({
 Movie.propTypes = {
   title: PropTypes.string.isRequired,
   poster: PropTypes.string.isRequired,
-  plot: PropTypes.string.isRequired,
-  runtime: PropTypes.string.isRequired,
+  plot: PropTypes.string,
+  runtime: PropTypes.string,
   year: PropTypes.string.isRequired,
-  genres: PropTypes.array.isRequired
+  genres: PropTypes.array
 };
 
 export default Movie;

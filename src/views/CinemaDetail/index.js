@@ -13,7 +13,7 @@ const CinemaDetail = ({ route }) => {
     <ScrollView>
       <View style={styles.cinemaContainer}>
         <Text style={styles.cinemaTitle}>{ name }</Text>
-        <Text style={styles.cinemaParagraph}>{ description.replace(/<br>/g, '').replace(/<b>/g, '') }</Text>
+        <Text style={styles.cinemaParagraph}>{ description ? description.replace(/<br>/g, '').replace(/<b>/g, '') : description }</Text>
         <Text style={styles.cinemaParagraph}>{ address }</Text>
         <Text style={styles.cinemaParagraph}>{ phone }</Text>
         <Text style={styles.cinemaParagraph}>{ website }</Text>
