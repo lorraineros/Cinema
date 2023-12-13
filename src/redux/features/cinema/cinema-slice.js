@@ -8,9 +8,6 @@ const cinemaSlice = createSlice({
     cinemas: [],
     cinemasIsLoading: false,
     cinemasError: undefined,
-    selectedCinema: {},
-    selectedCinemaIsLoading: false,
-    selectedCinemaError: undefined
   },
   reducers: {
     getCinemasLoading: (state) => {

@@ -3,9 +3,7 @@ import { ScrollView, Text, View, Image, TouchableOpacity, Linking } from 'react-
 import styles from './styles';
 
 const MovieDetail = ({ route }) => {
-  const { title, poster, plot, runtime, year, genres, showtimes } = route.params;
-
-  console.log('Movie data:', { title, poster, plot, runtime, year, genres, showtimes });
+  const { movie } = route.params;
 
   const renderSchedule = (showtime) => (
     showtime.schedule.map((scheduleItem, index) => (
@@ -22,24 +20,29 @@ const MovieDetail = ({ route }) => {
 
   return (
     <ScrollView>
-      <View style={styles.container}>
-        <Text style={styles.title}>{title}</Text>
+      <View style={styles.infoContainer}>
         <Image
           style={styles.image}
-          source={{ uri: poster }}
-          resizeMode="contain"
+          source={{ uri: movie['poster'] }}
         />
-        <Text style={styles.plot}>{plot}</Text>
-        <Text style={styles.details}>Duration: {runtime} minutes</Text>
-        <Text style={styles.details}>Year of Release: {year}</Text>
-        <View style={styles.genreContainer}>
-          {genres.map((genre, index) => (
-            <Text key={index} style={styles.genre}>{genre.Name}</Text>
-          ))}
+        <View>
+          <Text style={styles.title}>{movie['title']}</Text>
+          <Text style={styles.details}>Duration: { movie['durationMinutes'] } minutes</Text>
+          <Text style={styles.details}>Year of Release: { movie['year'] }</Text>
+          <View style={styles.genreContainer}>
+            { movie['genres'].map((genre, index) => (
+              <Text key={index} style={styles.genre}>{ genre.Name }</Text>
+            ))}
+          </View>
         </View>
+      </View>
+      <View style={styles.container}>
+        <Text style={styles.plot}>{ movie['plot'] }</Text>
         <View style={styles.showtimesContainer}>
-          <Text style={styles.showtimesTitle}>Showtimes:</Text>
-          {showtimes.map(renderSchedule)}
+          <Text style={styles.showtime}>Showtimes</Text>
+          <View style={styles.scheduleItem}>
+            { movie['showtimes'].map(renderSchedule) }
+          </View>
         </View>
       </View>
     </ScrollView>

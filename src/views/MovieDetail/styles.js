@@ -9,19 +9,28 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start'
   },
+  infoContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    paddingLeft: 20,
+    paddingRight: 20,
+    backgroundColor: 'white',
+    alignItems: 'start',
+    justifyContent: 'start'
+  },
   title: {
-    marginTop: 20,
-    marginBottom: 10,
-    fontSize: 24,
+    maxWidth: 220,
+    marginTop: 37,
+    paddingLeft: 15,
+    fontSize: 20,
     fontWeight: 'bold',
     color: stTropaz,
     textAlign: 'center'
   },
   image: {
-    width: '100%', // Adjust as needed
-    height: 300, // Adjust as needed
-    resizeMode: 'contain',
-    marginBottom: 20
+    width: '40%',
+    height: 300,
+    resizeMode: 'contain'
   },
   plot: {
     fontSize: 16,
@@ -31,23 +40,24 @@ export default StyleSheet.create({
   },
   details: {
     fontSize: 16,
+    paddingLeft: 15,
     color: darkerBlue,
-    marginBottom: 10
+    marginTop: 10
   },
   genreContainer: {
+    paddingLeft: 15,
     flexDirection: 'row',
-    justifyContent: 'center',
-    flexWrap: 'wrap',
-    marginBottom: 20
+    justifyContent: 'start',
+    flexWrap: 'wrap'
   },
   genre: {
     fontSize: 14,
+    fontWeight: '500',
     color: darkerBlue,
     marginRight: 10,
-    marginBottom: 10
+    marginTop: 10
   },
   showtimeItem: {
-    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     marginBottom: 10
@@ -57,6 +67,7 @@ export default StyleSheet.create({
     color: darkerBlue
   },
   purchaseButton: {
+    marginLeft: 5,
     backgroundColor: 'black',
     paddingVertical: 5,
     paddingHorizontal: 10,
@@ -68,8 +79,10 @@ export default StyleSheet.create({
   },
   scheduleItem: {
     flexDirection: 'row',
+    flexWrap: 'wrap',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 5
+    marginBottom: 5,
+    padding: 5
   },
 });

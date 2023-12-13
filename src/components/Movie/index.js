@@ -7,27 +7,23 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getCinemas } from '../../redux/features/cinema/cinema-slice';
 
 const Movie = ({
-  title, 
-  poster, 
-  plot, 
-  durationMinutes, 
-  year, 
-  genres,
-  showtimes,
-  purchase_url
+  movies,
+  title
  }) => {
   const { navigate } = useNavigation();
+  const movie = movies.find(m => m['title'] === title )
+
   return (
-    <TouchableOpacity onPress={() => navigate('MovieDetail', { title, poster, plot, durationMinutes, year, genres, showtimes, purchase_url })}>
+    <TouchableOpacity onPress={() => navigate('MovieDetail', { movie })}>
       <View style={ styles.container }>
         <Image
-            style={styles.image}
-            resizeMode='cover'
-            source={{ uri: poster }}/>
-        <Text style={styles.title}>{ title }</Text>
-        <Text style={styles.paragraph}>{ year }</Text>
+          style={styles.image}
+          resizeMode='cover'
+          source={{ uri: movie['poster'] }}/>
+        <Text style={styles.title}>{ movie['title'] }</Text>
+        <Text style={styles.paragraph}>{ movie['year'] }</Text>
         <View style={styles.genres}>
-          {genres.map((genre, index) => 
+          {movie['genres'].map((genre, index) => 
             <Text key={index} style={styles.genreParagraph}>{ genre.Name }</Text>
           )}
         </View>

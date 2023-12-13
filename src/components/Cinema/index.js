@@ -1,25 +1,20 @@
-import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 import styles from './styles';
-import { Button, Image, Text, TouchableOpacity, View } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { useDispatch, useSelector } from 'react-redux';
-import { getCinemas } from '../../redux/features/cinema/cinema-slice';
 
 const Cinema = ({
-  name,
-  description,
-  address,
-  phone,
-  website
+  cinemas,
+  name
  }) => {
   const { navigate } = useNavigation();
+  const cinema = cinemas.find(c => c['name'] === name )
 
   return (
-    <TouchableOpacity onPress={() => navigate('CinemaDetail', { name, description, address, phone, website })}>
+    <TouchableOpacity onPress={() => navigate('CinemaDetail', { cinema })}>
       <View style={ styles.container }>
-        <Text style={styles.title}>{ name }</Text>
-        <Text style={styles.paragraph}>{ website }</Text>
+        <Text style={styles.title}>{ cinema['name'] }</Text>
+        <Text style={styles.paragraph}>{ cinema['website'] }</Text>
       </View>
     </TouchableOpacity>
   );

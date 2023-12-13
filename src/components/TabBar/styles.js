@@ -10,7 +10,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     width: winWidth,
     height: 40,
-    backgroundColor: black
+    backgroundColor: 'dimgray'
   },
   taskTabBar: {
     marginBottom: 10,

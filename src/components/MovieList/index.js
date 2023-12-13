@@ -19,7 +19,7 @@ const MovieList = ({ movies , cinemaName }) => {
   return (
     <View style={styles.container}>
       {filteredMovies.map((movie) => (
-        <Movie key={movie.id} {...movie} />
+        <Movie movies={movies} key={movie.id} {...movie} />
       ))}
     </View>
   );

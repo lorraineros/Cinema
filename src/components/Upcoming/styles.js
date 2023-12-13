@@ -6,10 +6,10 @@ const { width: winWidth, height: winHeight } = Dimensions.get('window');
 export default StyleSheet.create({
   container: {
     width: winWidth - 100,
-    padding: 15 ,
+    padding: 10,
     margin: 3,
     borderRadius: 5,
-    borderColor: 'grey',
+    borderColor: 'gray',
     borderWidth: 5,
     backgroundColor: 'whitesmoke',
     alignItems: 'center',
@@ -24,21 +24,8 @@ export default StyleSheet.create({
     fontSize: 15,
     color: darkerBlue
   },
-  genreParagraph: {
-    paddingLeft: 5,
-    paddingRight: 5,
-    fontWeight: '500',
-    fontSize: 15,
-    color: darkerBlue
-  },
   image: {
     width: 100,
     height: 150
-  },
-  genres: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-around'
   }
 });

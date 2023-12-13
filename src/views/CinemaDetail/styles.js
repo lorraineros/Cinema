@@ -3,32 +3,36 @@ import { darkerBlue, stTropaz } from '../../styles/colors';
 
 export default StyleSheet.create({
   cinemaContainer: {
-    padding: 25,
+    padding: 20,
+    borderColor: 'dimgray',
+    borderWidth: 7,
     backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'start'
   },
   movieContainer: {
-    marginTop: 20,
-    padding: 25,
+    padding: 20,
+    borderColor: 'darkgray',
+    borderWidth: 7,
     backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'start'
   },
   cinemaTitle: {
-    padding: 30,
+    padding: 15,
     fontSize: 24,
     fontWeight: 'bold',
     color: stTropaz
   },
   movieTitle: {
-    padding: 30,
+    padding: 15,
     fontSize: 24,
     fontWeight: 'bold',
     color: 'white'
   },
   cinemaParagraph: {
     fontSize: 17,
-    color: darkerBlue
+    color: darkerBlue,
+    paddingBottom: 10
   }
 });

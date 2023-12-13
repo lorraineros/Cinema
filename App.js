@@ -4,6 +4,7 @@ import { Provider as StoreProvider, useDispatch, useSelector  } from 'react-redu
 import { getToken } from './src/redux/features/token/token-slice';
 import { getCinemas } from './src/redux/features/cinema/cinema-slice';
 import { getMovies } from './src/redux/features/movie/movie-slice';
+import { getUpcoming } from './src/redux/features/upcoming/upcoming-slice';
 import store from './src/redux/store';
 
 export default function AppWrapper () {
@@ -29,6 +30,7 @@ const App = () => {
         // At this point, the token is guaranteed to be available or updated
         dispatch(getCinemas(token));
         dispatch(getMovies(token));
+        dispatch(getUpcoming(token));
       } catch (error) {
         console.error('Error fetching data:', error);
       }
