@@ -16,18 +16,28 @@ export default StyleSheet.create({
     justifyContent: 'start'
   },
   title: {
-    paddingLeft: 20,
     fontSize: 20,
     fontWeight: 'bold',
     color: stTropaz
   },
   paragraph: {
-    paddingLeft: 20,
+    fontSize: 15,
+    color: darkerBlue
+  },
+  genreParagraph: {
+    padding: 5,
+    fontWeight: '500',
     fontSize: 15,
     color: darkerBlue
   },
   image: {
     width: 100,
     height: 150
+  },
+  genres: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around'
   }
 });

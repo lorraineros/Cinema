@@ -1,9 +1,13 @@
 import styles from './styles';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { useSelector } from 'react-redux';
 import MovieList from '../../components/MovieList';
 
 const CinemaDetail = ({ route }) => {
   const { name, description, address, phone, website } = route.params;
+  const movies = useSelector((state) => {
+    return state.movie.movies;
+  });
 
   return (
     <ScrollView>
@@ -16,7 +20,7 @@ const CinemaDetail = ({ route }) => {
       </View>
       <View style={styles.movieContainer}>
         <Text style={styles.movieTitle}>Movies</Text>
-        <MovieList cinemaName={name} />
+        <MovieList movies={movies} cinemaName={name} />
       </View>
     </ScrollView>
   );

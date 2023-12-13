@@ -24,10 +24,11 @@ const Movie = ({
             source={{ uri: poster }}/>
         <Text style={styles.title}>{ title }</Text>
         <Text style={styles.paragraph}>{ year }</Text>
-        {genres.map((genre, index) => 
-          <Text key={index} style={styles.paragraph}>{ genre.Name }</Text>
-        )}
-        
+        <View style={styles.genres}>
+          {genres.map((genre, index) => 
+            <Text key={index} style={styles.genreParagraph}>{ genre.Name }</Text>
+          )}
+        </View>
       </View>
     </TouchableOpacity>
   );
@@ -39,7 +40,7 @@ Movie.propTypes = {
   plot: PropTypes.string.isRequired,
   runtime: PropTypes.string.isRequired,
   year: PropTypes.string.isRequired,
-  genres: PropTypes.arrayOf(PropTypes.object).isRequired
+  genres: PropTypes.array.isRequired
 };
 
 export default Movie;

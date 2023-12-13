@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styles from './styles';
-import { StatusBar } from 'expo-status-bar';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, View } from 'react-native';
+import { useSelector } from 'react-redux';
 import CinemaList from '../../components/CinemaList';
 
-const Cinemas = ({ navigation: {navigate} }) => {
+const Cinemas = () => {
+  const cinemas = useSelector((state) => {
+    return state.cinema.cinemas.slice().sort((a, b) => a.name.localeCompare(b.name));
+  });
   
   return (
     <ScrollView>
       <View style={styles.container}>
-        <CinemaList />
+        <CinemaList cinemas={cinemas} />
       </View>
     </ScrollView>
   );
