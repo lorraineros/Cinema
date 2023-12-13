@@ -10,13 +10,13 @@ const Movie = ({
   title, 
   poster, 
   plot, 
-  runtime, 
+  durationMinutes, 
   year, 
   genres,
  }) => {
   const { navigate } = useNavigation();
   return (
-    <TouchableOpacity onPress={() => navigate('MovieDetail', { title, poster, plot, runtime, year, genres })}>
+    <TouchableOpacity onPress={() => navigate('MovieDetail', { title, poster, plot, durationMinutes, year, genres })}>
       <View style={ styles.container }>
         <Image
             style={styles.image}
@@ -38,7 +38,7 @@ Movie.propTypes = {
   title: PropTypes.string.isRequired,
   poster: PropTypes.string.isRequired,
   plot: PropTypes.string,
-  runtime: PropTypes.string,
+  durationMinutes: PropTypes.string,
   year: PropTypes.string.isRequired,
   genres: PropTypes.array
 };

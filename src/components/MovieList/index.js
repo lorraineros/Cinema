@@ -31,7 +31,7 @@ MovieList.propTypes = {
       title: PropTypes.string.isRequired,
       poster: PropTypes.string.isRequired,
       plot: PropTypes.string,
-      runtime: PropTypes.string,
+      durationMinutes: PropTypes.string,
       year: PropTypes.string.isRequired,
       genres: PropTypes.array
     })
