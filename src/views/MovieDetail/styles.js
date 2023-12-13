@@ -4,33 +4,25 @@ import { darkerBlue, stTropaz } from '../../styles/colors';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
-    backgroundColor: 'white',
-    alignItems: 'center',
-    justifyContent: 'flex-start'
-  },
-  infoContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    paddingLeft: 20,
-    paddingRight: 20,
-    backgroundColor: 'white',
-    alignItems: 'start',
-    justifyContent: 'start'
+    backgroundColor: 'white'
   },
   title: {
-    maxWidth: 220,
-    marginTop: 37,
-    paddingLeft: 15,
+    textAlign: 'center',
     fontSize: 20,
     fontWeight: 'bold',
     color: stTropaz,
-    textAlign: 'center'
+    marginTop: 20,
   },
   image: {
-    width: '40%',
+    width: '80%',
     height: 300,
-    resizeMode: 'contain'
+    resizeMode: 'contain',
+    alignSelf: 'center',
+    marginTop: 20
+  },
+  detailsContainer: {
+    padding: 20,
+    alignItems: 'center'
   },
   plot: {
     fontSize: 16,
