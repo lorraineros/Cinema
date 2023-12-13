@@ -1,13 +1,29 @@
+import React from 'react';
+import { ScrollView, Text, View, Image } from 'react-native';
 import styles from './styles';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 const MovieDetail = ({ route }) => {
-  const { name, image, plot, runtime, released, genre } = route.params;
+  const { title, poster, plot, runtime, year, genres, cinemaShowtimes } = route.params;
+
+  console.log('Movie data:', { title, poster, plot, runtime, year, genres });
 
   return (
     <ScrollView>
       <View style={styles.container}>
-        <Text style={styles.cinemaTitle}>{ name }</Text>
+        <Text style={styles.title}>{title}</Text>
+        <Image
+          style={styles.image}
+          source={{ uri: poster }}
+          resizeMode="contain"
+        />
+        <Text style={styles.plot}>{plot}</Text>
+        <Text style={styles.details}>Duration: {runtime} minutes</Text>
+        <Text style={styles.details}>Year of Release: {year}</Text>
+        <View style={styles.genreContainer}>
+          {genres.map((genre, index) => (
+            <Text key={index} style={styles.genre}>{genre.Name}</Text>
+          ))}
+        </View>
       </View>
     </ScrollView>
   );

@@ -12,7 +12,7 @@ const Movie = ({
   plot, 
   runtime, 
   year, 
-  genres
+  genres,
  }) => {
   const { navigate } = useNavigation();
   return (
