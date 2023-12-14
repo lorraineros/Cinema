@@ -14,9 +14,13 @@ const MovieList = ({
 
   return (
     <View style={styles.container}>
-      {filteredMovies.map((movie) => (
-        <Movie movies={movies} cinemaName={cinemaName} key={movie.id} {...movie} />
-      ))}
+      {filteredMovies.length === 0 ? (
+        <Text style={styles.paragraph}>No movies available for this cinema</Text>
+      ) : (
+        filteredMovies.map((movie) => (
+          <Movie movies={movies} cinemaName={cinemaName} key={movie.id} {...movie} />
+        ))
+      )}
     </View>
   );
 };

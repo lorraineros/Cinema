@@ -12,6 +12,7 @@ export default StyleSheet.create({
   paragraph: {
     padding: 50,
     fontSize: 20,
-    color: stTropaz,
+    color: 'white',
+    textAlign: 'center'
   },
 });

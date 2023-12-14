@@ -6,6 +6,7 @@ import { getCinemas } from './src/redux/features/cinema/cinema-slice';
 import { getMovies } from './src/redux/features/movie/movie-slice';
 import { getUpcoming } from './src/redux/features/upcoming/upcoming-slice';
 import store from './src/redux/store';
+import { LogBox } from 'react-native';
 
 export default function AppWrapper () {
   return (
@@ -16,12 +17,13 @@ export default function AppWrapper () {
 }
 
 const App = () => {
+  LogBox.ignoreAllLogs(true);
   const dispatch = useDispatch();
   // const token = useSelector((state) => {
   //   return state.token.token;
   // });
 
-  const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjY1NzcxMDU3YzQwNzkzMzZiYzAyNTI0ZCIsImlhdCI6MTcwMjQ3NTg0NCwiZXhwIjoxNzAyNTYyMjQ0fQ.fxVnG66h_PuhFXZw1CbbxGmVvkxf-51haHeTL20dvdg";
+  const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjY1NzcxMDU3YzQwNzkzMzZiYzAyNTI0ZCIsImlhdCI6MTcwMjU1MDQ3MCwiZXhwIjoxNzAyNjM2ODcwfQ.-qlx-kDDybu1MteB4H9e7iATp0a13etso70mUJdrHHk";
 
   useEffect(() => {
     const fetchData = () => {
