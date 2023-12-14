@@ -12,7 +12,7 @@ const Movie = ({
   title
 }) => {
   const { navigate } = useNavigation();
-  const movie = movies.find(m => m['title'] === title )
+  const movie = movies.find(m => m.title === title )
 
   return (
     <TouchableOpacity onPress={() => navigate('MovieDetail', { movie, cinemaName })}>
@@ -20,11 +20,11 @@ const Movie = ({
         <Image
           style={styles.image}
           resizeMode='cover'
-          source={{ uri: movie['poster'] }}/>
-        <Text style={styles.title}>{ movie['title'] }</Text>
-        <Text style={styles.paragraph}>{ movie['year'] }</Text>
+          source={{ uri: movie.poster }}/>
+        <Text style={styles.title}>{ movie.title }</Text>
+        <Text style={styles.paragraph}>{ movie.year }</Text>
         <View style={styles.genres}>
-          {movie['genres'].map((genre, index) => 
+          {movie.genres.map((genre, index) => 
             <Text key={index} style={styles.genreParagraph}>{ genre.Name }</Text>
           )}
         </View>

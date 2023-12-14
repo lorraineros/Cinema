@@ -8,13 +8,13 @@ const Cinema = ({
   name
 }) => {
   const { navigate } = useNavigation();
-  const cinema = cinemas.find(c => c['name'] === name )
+  const cinema = cinemas.find(c => c.name === name )
 
   return (
     <TouchableOpacity onPress={() => navigate('CinemaDetail', { cinema })}>
       <View style={ styles.container }>
-        <Text style={styles.title}>{ cinema['name'] }</Text>
-        <Text style={styles.paragraph}>{ cinema['website'] }</Text>
+        <Text style={styles.title}>{ cinema.name }</Text>
+        <Text style={styles.paragraph}>{ cinema.website }</Text>
       </View>
     </TouchableOpacity>
   );

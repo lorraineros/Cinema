@@ -10,7 +10,7 @@ const Upcoming = ({
   upcomingList,
   title
 }) => {
-  const upcoming = upcomingList.find(c => c['title'] === title )
+  const upcoming = upcomingList.find(c => c.title === title )
   const { navigate } = useNavigation();
 
   return (
@@ -19,8 +19,8 @@ const Upcoming = ({
         <Image
           style={styles.image}
           resizeMode='cover'
-          source={{ uri: upcoming['poster'] }}/>
-        <Text style={styles.title}>{ upcoming['title'] }</Text>
+          source={{ uri: upcoming.poster }}/>
+        <Text style={styles.title}>{ upcoming.title }</Text>
         <Text style={styles.paragraph}>{ upcoming['release-dateIS'] }</Text>
       </View>
     </TouchableOpacity>
