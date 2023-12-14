@@ -33,7 +33,6 @@ export function getToken(username, password) {
   return async (dispatch) => {
     try {
       dispatch(getTokenLoading());
-      console.log(username, password)
       const base64Credentials = base64.encode(`${username}:${password}`);
       const response = await fetch(`${baseUrl}/authenticate`, {
         method: 'POST',

@@ -1,5 +1,7 @@
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 import { darkerBlue, stTropaz } from '../../styles/colors';
+
+const { width: winWidth, height: winHeight } = Dimensions.get('window');
 
 export default StyleSheet.create({
   container: {
@@ -7,7 +9,8 @@ export default StyleSheet.create({
     padding: 20,
     backgroundColor: 'white',
     alignItems: 'center',
-    justifyContent: 'flex-start'
+    justifyContent: 'flex-start',
+    height: winHeight - 200
   },
   infoContainer: {
     flex: 1,

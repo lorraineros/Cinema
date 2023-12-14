@@ -13,6 +13,7 @@ const Cinemas = () => {
   });
 
   useEffect(() => {
+    console.log("cinema", token)
     dispatch(getCinemas(token));
   }, [dispatch])
 

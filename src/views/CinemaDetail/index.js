@@ -23,6 +23,7 @@ const CinemaDetail = ({ route }) => {
   });
 
   useEffect(() => {
+    console.log("movie", token)
     dispatch(getMovies(token));
   }, [dispatch])
 
@@ -30,15 +31,15 @@ const CinemaDetail = ({ route }) => {
   return (
     <ScrollView>
       <View style={styles.cinemaContainer}>
-        <Text style={styles.cinemaTitle}>{ cinema['name'] }</Text>
-        <Text style={styles.cinemaParagraph}>{ cinema['description'] ? cinema['description'].replace(/<br>/g, '').replace(/<b>/g, '') : cinema['description'] }</Text>
-        <Text style={styles.cinemaParagraph}>{normalizedCinema.address}, {normalizedCinema.city}</Text>
-        <Text style={styles.cinemaParagraph}>{cinema['phone']}</Text>
-        <Text style={styles.cinemaParagraph}>{ cinema['website'] }</Text>
+        <Text style={styles.cinemaTitle}>{ cinema.name }</Text>
+        <Text style={styles.cinemaParagraph}>{ cinema.description ? cinema.description.replace(/<br>/g, '').replace(/<b>/g, '') : cinema.description }</Text>
+        <Text style={styles.cinemaParagraph}>{normalizedCinema.address}, {cinema.city}</Text>
+        <Text style={styles.cinemaParagraph}>{cinema.phone}</Text>
+        <Text style={styles.cinemaParagraph}>{ cinema.website }</Text>
       </View>
       <View style={styles.movieContainer}>
         <Text style={styles.movieTitle}>Movies</Text>
-        <MovieList movies={movies} cinemaName={cinema['name']} />
+        <MovieList movies={movies} cinemaName={cinema.name} />
       </View>
     </ScrollView>
   );

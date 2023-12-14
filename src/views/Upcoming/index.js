@@ -13,6 +13,7 @@ const Upcoming = () => {
   });
 
   useEffect(() => {
+    console.log("upcoming", token)
     dispatch(getUpcoming(token));
   }, [dispatch])
 

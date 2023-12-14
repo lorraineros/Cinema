@@ -6,7 +6,7 @@ const MovieDetail = ({
     route
   }) => {
   const { movie, cinemaName } = route.params;
-  const showtimes = movie['showtimes'].filter((showtime) =>
+  const showtimes = movie.showtimes.filter((showtime) =>
     showtime.cinema.name === cinemaName
   );
 
@@ -28,21 +28,21 @@ const MovieDetail = ({
       <View style={styles.infoContainer}>
         <Image
           style={styles.image}
-          source={{ uri: movie['poster'] }}
+          source={{ uri: movie.poster }}
         />
         <View>
-          <Text style={styles.title}>{movie['title']}</Text>
-          <Text style={styles.details}>Duration: { movie['durationMinutes'] } minutes</Text>
-          <Text style={styles.details}>Year of Release: { movie['year'] }</Text>
+          <Text style={styles.title}>{movie.title}</Text>
+          <Text style={styles.details}>Duration: { movie.durationMinutes } minutes</Text>
+          <Text style={styles.details}>Year of Release: { movie.year }</Text>
           <View style={styles.genreContainer}>
-            { movie['genres'].map((genre, index) => (
+            { movie.genres.map((genre, index) => (
               <Text key={index} style={styles.genre}>{ genre.Name }</Text>
             ))}
           </View>
         </View>
       </View>
       <View style={styles.container}>
-        <Text style={styles.plot}>{ movie['plot'] }</Text>
+        <Text style={styles.plot}>{ movie.plot }</Text>
         <View style={styles.showtimesContainer}>
           <Text style={styles.showtime}>Showtimes</Text>
           <View style={styles.scheduleItem}>
