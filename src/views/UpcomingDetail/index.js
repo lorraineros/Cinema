@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, Text, View } from 'react-native';
+import { Image, ScrollView, Text, View } from 'react-native';
 import { WebView } from 'react-native-webview';
 import styles from './styles';
 
@@ -7,14 +7,18 @@ const UpcomingDetail = ({
   route
 }) => {
   const { upcoming } = route.params;
-
   return (
+    <ScrollView>
     <View style={styles.container}>
+      <Image
+          style={styles.image}
+          source={{ uri: upcoming['poster'] }}
+        />
       <Text style={styles.title}>{upcoming['title']}</Text>
       <Text style={styles.paragraph}>{upcoming['plot']}</Text>
 
       {upcoming['trailers'] && upcoming['trailers'].length > 0 && upcoming['trailers'][0].results.length > 0 && (
-        <View>
+        <View style={styles.trailerContainer}>
           <Text style={styles.trailerTitle}>Trailer</Text>
           <WebView
             source={{ uri: upcoming['trailers'][0].results[0].url }}
@@ -24,6 +28,7 @@ const UpcomingDetail = ({
         </View>
       )}
     </View>
+    </ScrollView>
   );
 };
 

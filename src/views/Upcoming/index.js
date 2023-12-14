@@ -11,7 +11,7 @@ const Upcoming = () => {
       const dateA = new Date(b['release-dateIS']);
       const dateB = new Date(a['release-dateIS']);
       return dateB - dateA;
-    });;
+    });
   });
   return (
     <ScrollView>

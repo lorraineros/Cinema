@@ -21,8 +21,8 @@ export default StyleSheet.create({
     padding: 20
   },
   image: {
-    width: 100,
-    height: 150
+    width: 150,
+    height: 200
   },
   trailerTitle: {
     fontSize: 20,
@@ -32,5 +32,8 @@ export default StyleSheet.create({
   webview: {
     width: 300,
     maxHeight: 200,
+  },
+  trailerContainer: {
+    paddingBottom: 200
   }
 });

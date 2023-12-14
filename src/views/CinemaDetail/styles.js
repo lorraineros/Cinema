@@ -33,6 +33,7 @@ export default StyleSheet.create({
   cinemaParagraph: {
     fontSize: 17,
     color: darkerBlue,
-    paddingBottom: 10
+    paddingBottom: 10,
+    textAlign: 'center'
   }
 });

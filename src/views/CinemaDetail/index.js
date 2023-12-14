@@ -17,13 +17,13 @@ const CinemaDetail = ({ route }) => {
   const normalizedCinema = normalizeKeys(cinema);
   const movies = useSelector((state) => state.movie.movies);
 
-  console.log( cinema )
   return (
     <ScrollView>
       <View style={styles.cinemaContainer}>
         <Text style={styles.cinemaTitle}>{ cinema['name'] }</Text>
         <Text style={styles.cinemaParagraph}>{ cinema['description'] ? cinema['description'].replace(/<br>/g, '').replace(/<b>/g, '') : cinema['description'] }</Text>
-        <Text style={styles.cinemaParagraph}>{normalizedCinema.address}, {normalizedCinema.city} </Text>        <Text style={styles.cinemaParagraph}>{ cinema['website'] }</Text>
+        <Text style={styles.cinemaParagraph}>{normalizedCinema.address}, {normalizedCinema.city}</Text>
+        <Text style={styles.cinemaParagraph}>{ cinema['website'] }</Text>
       </View>
       <View style={styles.movieContainer}>
         <Text style={styles.movieTitle}>Movies</Text>
