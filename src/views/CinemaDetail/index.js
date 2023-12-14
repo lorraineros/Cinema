@@ -23,7 +23,6 @@ const CinemaDetail = ({ route }) => {
   });
 
   useEffect(() => {
-    console.log("movie", token)
     dispatch(getMovies(token));
   }, [dispatch])
 
