@@ -33,6 +33,13 @@ export default StyleSheet.create({
     width: 300,
     maxHeight: 200,
   },
+  releaseDate: {
+    fontSize: 14,
+    color: stTropaz,
+    marginVertical: 8,
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
   trailerContainer: {
     paddingBottom: 200
   }
