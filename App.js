@@ -28,11 +28,12 @@ const App = () => {
   useEffect(() => {
     const fetchData = () => {
       try {
-        // dispatch(getToken());
+        // dispatch(getToken('group13', '131313'));
+        // console.log('app', token);
         // At this point, the token is guaranteed to be available or updated
-        dispatch(getCinemas(token));
-        dispatch(getMovies(token));
-        dispatch(getUpcoming(token));
+        // dispatch(getCinemas(token));
+        // dispatch(getMovies(token));
+        // dispatch(getUpcoming(token));
       } catch (error) {
         console.error('Error fetching data:', error);
       }

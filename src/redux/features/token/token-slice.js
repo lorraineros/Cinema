@@ -1,3 +1,4 @@
+import base64 from 'react-native-base64'
 import { createSlice } from "@reduxjs/toolkit";
 
 const baseUrl = 'https://api.kvikmyndir.is';
@@ -20,6 +21,7 @@ const tokenSlice = createSlice({
     },
     getTokenError: (state, action) => {
       state.tokenIsLoading = false;
+      state.token = {};
       state.tokenError = action.payload; 
     }
   }
@@ -27,16 +29,18 @@ const tokenSlice = createSlice({
 
 const { getTokenLoading, getTokenReceived, getTokenError } = tokenSlice.actions;
 
-export function getToken() {
+export function getToken(username, password) {
   return async (dispatch) => {
     try {
       dispatch(getTokenLoading());
+      console.log(username, password)
+      const base64Credentials = base64.encode(`${username}:${password}`);
       const response = await fetch(`${baseUrl}/authenticate`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
-          'Authorization': 'Basic YW5oMDUxMjp0aHV2dTUxMg=='
+          'Authorization': `Basic ${base64Credentials}`
         },
       });
       const json = await response.json();

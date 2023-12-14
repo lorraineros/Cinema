@@ -1,6 +1,8 @@
+import React, { useEffect } from 'react';
 import styles from './styles';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import { useSelector } from 'react-redux';
+import { ScrollView, Text, View } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
+import { getMovies } from '../../redux/features/movie/movie-slice';
 import MovieList from '../../components/MovieList';
 
 const normalizeKeys = (obj) => {
@@ -15,9 +17,16 @@ const normalizeKeys = (obj) => {
 const CinemaDetail = ({ route }) => {
   const { cinema } = route.params;
   const normalizedCinema = normalizeKeys(cinema);
-  const movies = useSelector((state) => state.movie.movies);
+  const dispatch = useDispatch();
+  const token = useSelector((state) => {
+    return state.token.token;
+  });
 
-  console.log( cinema )
+  useEffect(() => {
+    dispatch(getMovies(token));
+  }, [dispatch])
+
+  const movies = useSelector((state) => state.movie.movies);
   return (
     <ScrollView>
       <View style={styles.cinemaContainer}>
